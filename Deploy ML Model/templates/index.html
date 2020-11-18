@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Machine Learning {{title}}</title>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='bootstrap.min.css') }}"
+		/>
+	</head>
+	<body>
+		<div class="container pt-4">
+			<h4>Machine Learning {{title}}</h4>
+			<p>
+				Just input the required data and the prediction result will come out
+			</p>
+			<form method="POST" action="">
+				{{ form.hidden_tag() }}
+				<div class="row pt-3 pb-3">
+					<div class="col">
+						{{ form.sepal_length.label }} 
+						{{ form.sepal_length(class="form-control") }}
+					</div>
+					<div class="col">
+						{{ form.sepal_width.label }} 
+						{{ form.sepal_width(class="form-control") }}
+					</div>
+				</div>
+				<div class="row pt-3">
+					<div class="col">
+						{{ form.petal_length.label }} 
+						{{ form.petal_length(class="form-control") }}
+					</div>
+					<div class="col">
+						{{ form.petal_width.label }} 
+						{{ form.petal_width(class="form-control") }}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col justify-content-center d-flex">
+						{{ form.submit(class="btn btn-primary mt-5") }}
+					</div>
+				</div>
+			</form>
+			<div class="row pt-5">
+				<div class="col">
+					<h1 class="d-flex justify-content-center font-weight-bold">
+						{{ result }}
+					</h1>
+				</div>
+			</div>
+		</div>
+		<script src="{{ url_for('static', filename='jquery-3.5.1.slim.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+	</body>
+</html>
