@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
-from forms import DataFormfrom model_ml import predict_input
+from forms import DataForm
+from model_ml import predict_input
 
 app = Flask(__name__)
 
